@@ -14,10 +14,12 @@ export const Default = Template.bind({});
 Default.args = {
   children: '장바구니'
 }
+
 export const Naver = Template.bind({});
 Naver.args = {
   type: 'naver'
 }
+
 export const Heart = Template.bind({});
 Heart.args = {
   type: 'heart'

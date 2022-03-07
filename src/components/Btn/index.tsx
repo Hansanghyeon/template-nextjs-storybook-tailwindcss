@@ -3,7 +3,10 @@ import NaverPayBtn from './NaverPayBtn';
 import HeartBtn from './HeartBtn';
 import BlackBtn from './BlackBtn'
 
-const Btn: React.FC<{ type: string }> = ({ type, ...props }) => {
+type BtnProps = {
+  type: 'naver' | 'heart' | 'black';
+}
+const Btn: React.FC<BtnProps> = ({ type, ...props }) => {
   switch (type) {
     case 'naver':
       return <NaverPayBtn {...props} />
