@@ -5,7 +5,14 @@ module.exports = {
     "./src/**/*.{jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "var(--container-px, 1rem)",
+        },
+      },
+    },
   },
   plugins: [],
-}
+};
