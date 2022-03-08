@@ -21,6 +21,8 @@ module.exports = {
         },
       },
     },
+    "@storybook/addon-jest",
+    "@storybook/addon-a11y",
   ],
   "framework": "@storybook/react",
   "core": {
