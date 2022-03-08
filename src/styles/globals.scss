@@ -1,0 +1,6 @@
+:root {
+  --container-px: 16px;
+  @media (min-width: theme("screens.md")) {
+    --container-px: 20px;
+  }
+}
