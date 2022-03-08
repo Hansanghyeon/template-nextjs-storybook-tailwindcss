@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Btn from 'components/Btn';
+import Btn from '@/components/Btn';
 
 const Products = () => {
   return (
@@ -11,7 +11,7 @@ const Products = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>header</header>
-      <div className="container mx-auto">
+      <div className="container">
         <div className="grid grid-cols-2">
           <div className="relative">
             <Image
