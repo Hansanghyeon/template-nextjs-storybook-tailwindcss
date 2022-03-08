@@ -1,13 +1,8 @@
+import { ReactPropTypes } from 'react';
 import styled from 'styled-components';
-import tw from 'twin.macro'
 
-const Button = styled.button`
-  ${tw`px-[16px] py-[12px]`}
-
+export const Button = styled.button`
   position: relative;
-  display: flex;
-  align-items: center;
-  text-align: center;
   border: 1px solid rgba(0,0,0, 0.2);
   background-color: white;
   transition: border-color 0.3s ease;
@@ -18,16 +13,20 @@ const Button = styled.button`
       border-color: rgb(0,0,0);
   }
 `;
+Button.defaultProps = {
+  className: `px-[16px] py-[12px]`
+}
 
-const DefaultBtn: React.FC = ({ children,...props }) => {
-    return (
-        <Button
-          type="button"
-          {...props}
-        >
-          {children}
-        </Button>
-    )
-  }
-  
-  export default DefaultBtn;
+const DefaultBtn: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({ children,...props }) => {
+  return (
+      <Button
+        type="button"
+        {...props}
+        className={`${Button.defaultProps?.className} ${props.className}`}
+      >
+        {children}
+      </Button>
+  )
+}
+
+export default DefaultBtn;

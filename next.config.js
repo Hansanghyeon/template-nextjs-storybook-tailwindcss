@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    outputStandalone: true,
+  images: {
+    domains: ['cdn.imweb.me'],
+  },
+  compiler: {
+    styledComponents: true,
   },
 }
 

@@ -3,9 +3,10 @@ import NaverPayBtn from './NaverPayBtn';
 import HeartBtn from './HeartBtn';
 import BlackBtn from './BlackBtn'
 
-type BtnProps = {
-  type: 'naver' | 'heart' | 'black';
+interface BtnProps extends React.HTMLAttributes<HTMLButtonElement> {
+  type?: 'naver' | 'heart' | 'black';
 }
+
 const Btn: React.FC<BtnProps> = ({ type, ...props }) => {
   switch (type) {
     case 'naver':

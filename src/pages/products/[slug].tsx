@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import Btn from 'components/Btn';
 
-const Products = ({ ...props }) => {
+const Products = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>아우릇 왕실원형접시</title>
         <meta name="description" content="아우릇 왕실원형접시" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -14,7 +15,7 @@ const Products = ({ ...props }) => {
         <div className="grid grid-cols-2">
           <div className="relative">
             <Image
-              src="/8074762d25d60.jpeg"
+              src="https://cdn.imweb.me/thumbnail/20211221/d77bc385d04a6.jpg"
               alt="thumbnail"
               layout="fill"
               objectFit="contain"
@@ -81,7 +82,15 @@ const Products = ({ ...props }) => {
                 popover
               </div>
             </div>
-            <div>구매 ui</div>
+            <div className="grid grid-cols-3 gap-[8px]">
+              <Btn type="black">구매하기</Btn>
+              <Btn>장바구니</Btn>
+              <Btn type="heart" />
+              <div className="col-span-3 flex gap-x-[8px]">
+                <Btn type="naver" className="flex-1" />
+                <Btn className="text-[#00c73c]">찜</Btn>
+              </div>
+            </div>
           </div>
         </div>
         <div>
@@ -116,13 +125,13 @@ const Products = ({ ...props }) => {
 
 export default Products;
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   return {
     props: {},
   };
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   return {
     paths: [`/products/test`],
     fallback: true,

@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import tw from 'twin.macro';
 
 const Button = styled.button`
-  ${tw`px-[16px] py-[12px]`}
-
   position: relative;
-  display: flex;
-  align-items: center;
   text-align: center;
   border: 1px solid rgba(0,0,0, 0.2);
   background-color: white;
@@ -19,8 +14,11 @@ const Button = styled.button`
       border-color: rgb(0,0,0);
   }
 `;
+Button.defaultProps = {
+  className: `px-[16px] py-[12px]`
+}
 
-const HeartBtn: React.FC = ({ children, ...props }) => {
+const HeartBtn: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({ children, ...props }) => {
   const [count, setCount] = useState(0);
   const [isCheck, setIsCheck] = useState(false);
 
@@ -32,13 +30,14 @@ const HeartBtn: React.FC = ({ children, ...props }) => {
   }
 
   return (
-      <Button
-        type="button"
-        onClick={handleClick}
-        {...props}
-      >
-        <i className={`icon-heart${isCheck ? '' : '-empty'}`}></i>
-      </Button>
+    <Button
+      type="button"
+      onClick={handleClick}
+      {...props}
+      className={`${Button.defaultProps?.className} ${props.className}`}
+    >
+      <i className={`icon-heart${isCheck ? '' : '-empty'}`}></i>
+    </Button>
   )
 }
 
