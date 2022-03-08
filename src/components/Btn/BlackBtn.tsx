@@ -7,19 +7,22 @@ const Button = styled.button`
   color: #fff;
 `;
 Button.defaultProps = {
-  className: `px-[16px]`
-}
+  className: `px-[16px]`,
+};
 
-const BlackButton: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({ children,...props }) => {
+const BlackButton: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({
+  children,
+  ...props
+}) => {
   return (
     <Button
       type="button"
       {...props}
-      className={`${Button.defaultProps?.className} ${props.className}`}
+      className={`${Button.defaultProps?.className} ${props.className ?? ''}`}
     >
       {children}
     </Button>
-  )
-}
+  );
+};
 
 export default BlackButton;

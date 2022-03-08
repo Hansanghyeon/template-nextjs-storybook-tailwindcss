@@ -8,19 +8,21 @@ const Button = styled.button`
   min-height: 50px;
 `;
 Button.defaultProps = {
-  className: 'px-[16px]'
-}
+  className: 'px-[16px]',
+};
 
-const NaverPayBtn: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({ ...props }) => {
+const NaverPayBtn: React.FC<React.HTMLAttributes<HTMLButtonElement> | undefined> = ({
+  ...props
+}) => {
   return (
     <Button
       type="button"
       {...props}
-      className={`${Button.defaultProps?.className} ${props.className}`}
+      className={`${Button.defaultProps?.className} ${props.className ?? ''}`}
     >
       <Image src={npay} alt="네이버페이 구매하기" width={98} height={18} />
     </Button>
-  )
-}
+  );
+};
 
 export default NaverPayBtn;
