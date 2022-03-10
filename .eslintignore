@@ -1,0 +1,4 @@
+jest.*.js
+*.config.js
+**/__tests__/*
+*.test.*
