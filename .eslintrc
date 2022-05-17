@@ -1,8 +1,5 @@
 {
   "extends": [
-    "next/core-web-vitals",
-    "@imwebme/eslint-config",
-    "@imwebme/eslint-config/typescript",
-    "@imwebme/eslint-config/prettier"
+    "next/core-web-vitals"
   ]
 }
